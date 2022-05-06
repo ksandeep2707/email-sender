@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin',[ContentController::class,'index']);
+Route::post('/add/topic',[ContentController::class,'saveTopic']);
+Route::post('/add/user',[ContentController::class,'saveUser']);
+Route::post('/add/content',[ContentController::class,'saveContent']);
+Route::post('/send/mail',[ContentController::class,'sendMail']);
+
+
+
